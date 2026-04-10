@@ -12,12 +12,14 @@ public class Staffetta {
     private Corridore[] corridori;
     private Thread[] threads;
     private final int nCorridori = 4;
+    private GUIStaffetta gui;
 
-    public Staffetta() {
+    public Staffetta(GUIStaffetta gui) {
+        this.gui = gui;
         corridori = new Corridore[nCorridori];
         threads = new Thread[nCorridori];
         for (int i = 0; i < nCorridori; i++) {
-            corridori[i] = new Corridore("Corridore " + (i + 1), i + 1);
+            corridori[i] = new Corridore("Runner " + (i + 1), i + 1, gui);
             threads[i] = new Thread(corridori[i]);
         }
     }
@@ -42,8 +44,19 @@ public class Staffetta {
                 System.out.println("Staffetta interrotta");
             }
         }
-         //di mettere la variabile long e System.currentTimeMillis() mi è stato consigliato dall'ai
-        long fine = System.currentTimeMillis();
-        System.out.println("La staffetta è finita! Tempo totale: " + (fine - inizio) + " ms");
     }
-}
+    //di mettere la variabile long e System.currentTimeMillis() mi è stato consigliato dall'ai
+    public void sospendi() {
+        Corridore.suspendStaffetta();
+    }
+
+    public void riprendi() {
+        Corridore.resumeStaffetta();
+    }
+
+    public void ferma() {
+        for (Thread t : threads) {
+            t.interrupt();
+        }
+        Corridore.resumeStaffetta();
+    }
