@@ -4,10 +4,38 @@
  */
 package threadrelay;
 
-/**
- *
- * @author renzetti.alessandro
- */
-public class Corridore {
-    
+public class Corridore implements Runnable {
+    private String nome;
+    private int posizione;
+    private String testimone ="";
+    private boolean testimoneLibero = true;
+
+    public Corridore(String nome, int posizione) {
+        this.nome = nome;
+        this.posizione = posizione;
+    }
+
+    @Override
+    public void run() {
+        try {
+            if (posizione > 1) {
+                synchronized (testimone) {
+                    while (!testimoneLibero) testimone.wait();
+                    testimoneLibero = false;
+                }
+            }
+
+            System.out.println(nome + " inizia a correre nella posizione " + posizione);
+            Thread.sleep((long) (Math.random() * 3000 + 1000));
+            System.out.println(nome + " finisce la sua corsa");
+
+            synchronized (testimone) {
+                testimoneLibero = true;
+                testimone.notifyAll();
+            }
+
+        } catch (InterruptedException e) {
+            System.out.println(nome + " è stato interrotto");
+        }
+    }
 }

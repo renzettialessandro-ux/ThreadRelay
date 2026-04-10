@@ -28,17 +28,111 @@ public class GUIStaffetta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar2 = new javax.swing.JProgressBar();
+        pbRunner1 = new javax.swing.JProgressBar();
+        pbRunner2 = new javax.swing.JProgressBar();
+        pbRunner3 = new javax.swing.JProgressBar();
+        pbRunner4 = new javax.swing.JProgressBar();
+        lblRunner1 = new javax.swing.JLabel();
+        lblRunner2 = new javax.swing.JLabel();
+        lblRunner3 = new javax.swing.JLabel();
+        lblRunner4 = new javax.swing.JLabel();
+        cmbVelocita = new javax.swing.JComboBox<>();
+        btnAvvia = new javax.swing.JButton();
+        btnSospende = new javax.swing.JButton();
+        btnRiprende = new javax.swing.JButton();
+        btnFerma = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pbRunner1.setMinimumSize(new java.awt.Dimension(395, 79));
+        pbRunner1.setPreferredSize(new java.awt.Dimension(395, 79));
+
+        pbRunner2.setMinimumSize(new java.awt.Dimension(395, 79));
+        pbRunner2.setPreferredSize(new java.awt.Dimension(395, 79));
+
+        pbRunner3.setMinimumSize(new java.awt.Dimension(395, 79));
+        pbRunner3.setPreferredSize(new java.awt.Dimension(395, 79));
+
+        lblRunner1.setText("Runner 1");
+        lblRunner1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblRunner2.setText("Runner 2");
+        lblRunner2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblRunner3.setText("Runner 3");
+        lblRunner3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblRunner4.setText("Runner 4");
+        lblRunner4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAvvia.setText("Avvia");
+
+        btnSospende.setText("Sospende");
+
+        btnRiprende.setText("Riprende");
+
+        btnFerma.setText("Ferma");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(pbRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRunner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(cmbVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAvvia)
+                .addGap(18, 18, 18)
+                .addComponent(btnSospende)
+                .addGap(18, 18, 18)
+                .addComponent(btnRiprende)
+                .addGap(18, 18, 18)
+                .addComponent(btnFerma)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblRunner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbRunner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pbRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAvvia)
+                    .addComponent(btnSospende)
+                    .addComponent(btnRiprende)
+                    .addComponent(btnFerma))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -70,5 +164,19 @@ public class GUIStaffetta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAvvia;
+    private javax.swing.JButton btnFerma;
+    private javax.swing.JButton btnRiprende;
+    private javax.swing.JButton btnSospende;
+    private javax.swing.JComboBox<String> cmbVelocita;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JLabel lblRunner1;
+    private javax.swing.JLabel lblRunner2;
+    private javax.swing.JLabel lblRunner3;
+    private javax.swing.JLabel lblRunner4;
+    private javax.swing.JProgressBar pbRunner1;
+    private javax.swing.JProgressBar pbRunner2;
+    private javax.swing.JProgressBar pbRunner3;
+    private javax.swing.JProgressBar pbRunner4;
     // End of variables declaration//GEN-END:variables
 }
