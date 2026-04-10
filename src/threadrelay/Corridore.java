@@ -7,8 +7,8 @@ package threadrelay;
 public class Corridore implements Runnable {
     private String nome;
     private int posizione;
-    private String testimone ="";
-    private boolean testimoneLibero = true;
+    private static final Object testimone = new Object();
+    private static int posizioneCorrente = 1;
 
     public Corridore(String nome, int posizione) {
         this.nome = nome;
@@ -18,10 +18,9 @@ public class Corridore implements Runnable {
     @Override
     public void run() {
         try {
-            if (posizione > 1) {
-                synchronized (testimone) {
-                    while (!testimoneLibero) testimone.wait();
-                    testimoneLibero = false;
+            synchronized (testimone) {
+                while (posizione != posizioneCorrente) {
+                    testimone.wait();
                 }
             }
 
@@ -30,7 +29,7 @@ public class Corridore implements Runnable {
             System.out.println(nome + " finisce la sua corsa");
 
             synchronized (testimone) {
-                testimoneLibero = true;
+                posizioneCorrente++;
                 testimone.notifyAll();
             }
 
